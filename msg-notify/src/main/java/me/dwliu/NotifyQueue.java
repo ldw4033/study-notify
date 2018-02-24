@@ -58,7 +58,7 @@ public class NotifyQueue implements Serializable {
                 System.out.println("=="+notifyRecord);
                 notifyRecord.setLastNotifyTime(new Date(time));
                 System.out.println("--"+notifyRecord);
-                App.tasks.put(new NotifyTask(notifyRecord, this, notifyParam));
+                AppMain.tasks.put(new NotifyTask(notifyRecord, this, notifyParam));
             }
         }
     }

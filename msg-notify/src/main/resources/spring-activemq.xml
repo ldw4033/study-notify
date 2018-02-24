@@ -10,7 +10,7 @@
 	<bean id="targetConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
 		<property name="brokerURL" value="${mq.brokerURL}"/>
 		<property name="userName" value="${mq.userName}"></property>
-		<property name="password" value="${mq.password}"></property> 
+		<property name="password" value="${mq.password}"></property>
 	</bean>
 	
 	<bean id="pooledConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory">

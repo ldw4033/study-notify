@@ -1,9 +1,6 @@
 package me.dwliu;
 
 import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.concurrent.DelayQueue;
 
 import me.dwliu.bean.NotifyRecord;
@@ -18,9 +15,9 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
  *
  * @author zws
  */
-public class App {
+public class AppMain {
 
-    private static final Log LOG = LogFactory.getLog(App.class);
+    private static final Log LOG = LogFactory.getLog(AppMain.class);
 
     public static DelayQueue<NotifyTask> tasks = new DelayQueue<NotifyTask>();
 
@@ -43,10 +40,10 @@ public class App {
             LOG.error("== application start error:", e);
             return;
         }
-        synchronized (App.class) {
+        synchronized (AppMain.class) {
             while (true) {
                 try {
-                    App.class.wait();
+                    AppMain.class.wait();
                 } catch (InterruptedException e) {
                     LOG.error("== synchronized error:", e);
                 }
